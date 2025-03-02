@@ -8,7 +8,9 @@ namespace Tessenger.Client.Custom.Algorithms
 {
     public  interface IAlgorithms
     {
-        public  int pro(int a, int b);
-        
+        public static string TempCacLocalImagePath = FileSystem.CacheDirectory + "/TempImage";
+        public static string TempCacLocalAudioPath = FileSystem.CacheDirectory + "/TempAudio";
+
+        public Dictionary<string, (string CountryName, string Language)> GetCountryes { get; }
     }
 }

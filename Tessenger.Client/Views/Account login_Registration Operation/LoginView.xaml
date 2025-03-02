@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Tessenger.Client.Root_Page"
-             Loaded="ContentPage_Loaded"
-             Title="Root_Page">
+             x:Class="Tessenger.Client.Views.Account_login_Registration_Operation.LoginView">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET Rootpage"
+            Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>
-</ContentPage>
+</ContentView>
