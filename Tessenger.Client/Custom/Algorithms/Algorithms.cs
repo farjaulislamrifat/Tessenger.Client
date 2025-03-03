@@ -191,7 +191,7 @@ namespace Tessenger.Client.Custom.Algorithms
         /// <param name="Dark_color"></param>
         /// <param name="isDark"></param>
         /// <exception cref="NotImplementedException"></exception>
-        public void StatusBarCustomizetion(ContentPage contentPage, Color Light_color, Color Dark_color, bool isDark)
+        public void StatusBarCustomizetion(ContentPage contentPage, Color Light_color, Color Dark_color)
         {
             Application.Current.RequestedThemeChanged += (s, e) =>
             {
@@ -210,11 +210,11 @@ namespace Tessenger.Client.Custom.Algorithms
 
                     if (IsColorLight(Dark_color))
                     {
-                        contentPage.Behaviors.Add(new CommunityToolkit.Maui.Behaviors.StatusBarBehavior { StatusBarColor = Dark_color, StatusBarStyle = StatusBarStyle.LightContent });
+                        contentPage.Behaviors.Add(new CommunityToolkit.Maui.Behaviors.StatusBarBehavior { StatusBarColor = Dark_color, StatusBarStyle = StatusBarStyle.DarkContent });
                     }
                     else
                     {
-                        contentPage.Behaviors.Add(new CommunityToolkit.Maui.Behaviors.StatusBarBehavior { StatusBarColor = Dark_color, StatusBarStyle = StatusBarStyle.DarkContent });
+                        contentPage.Behaviors.Add(new CommunityToolkit.Maui.Behaviors.StatusBarBehavior { StatusBarColor = Dark_color, StatusBarStyle = StatusBarStyle.LightContent });
 
                     }
                 }
@@ -222,11 +222,11 @@ namespace Tessenger.Client.Custom.Algorithms
                 {
                     if (IsColorLight(Light_color))
                     {
-                        contentPage.Behaviors.Add(new CommunityToolkit.Maui.Behaviors.StatusBarBehavior { StatusBarColor = Light_color, StatusBarStyle = StatusBarStyle.LightContent });
+                        contentPage.Behaviors.Add(new CommunityToolkit.Maui.Behaviors.StatusBarBehavior { StatusBarColor = Light_color, StatusBarStyle = StatusBarStyle.DarkContent });
                     }
                     else
                     {
-                        contentPage.Behaviors.Add(new CommunityToolkit.Maui.Behaviors.StatusBarBehavior { StatusBarColor = Light_color, StatusBarStyle = StatusBarStyle.DarkContent });
+                        contentPage.Behaviors.Add(new CommunityToolkit.Maui.Behaviors.StatusBarBehavior { StatusBarColor = Light_color, StatusBarStyle = StatusBarStyle.LightContent });
                     }
                 }
               

@@ -9,12 +9,18 @@ namespace Tessenger.Client.ViewModels.Root_PageViewModel
     internal class Root_PageViewModel : BaseViewModel
     {
 
-
-
         Root_Page Root_Page_ { get; set; }
         public Root_PageViewModel(Root_Page obj)
         {
             Root_Page_ = obj;
+
+            OnInit();
+        }
+
+        void OnInit()
+        {
+            
+
         }
     }
 }

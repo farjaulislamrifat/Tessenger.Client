@@ -14,7 +14,7 @@ namespace Tessenger.Client.Custom.Algorithms
         public Dictionary<string, (string CountryName, string Language)> GetCountryes { get; }
 
        
-        public void StatusBarCustomizetion(ContentPage contentPage, Color Light_color, Color Dark_color, bool isDark);
+        public void StatusBarCustomizetion(ContentPage contentPage, Color Light_color, Color Dark_color);
 
         bool IsColorLight(Color color);
     }

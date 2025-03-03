@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tessenger.Client.Services.Api_Services
 {
-    internal interface IApi_Services
+    public interface IApi_Services
     {
     }
 
