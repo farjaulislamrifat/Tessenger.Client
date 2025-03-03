@@ -2,12 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Tessenger.Client.Root_Page"
+             
              Loaded="ContentPage_Loaded"
+             Shell.NavBarIsVisible="False"
              Title="Root_Page">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET Rootpage"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+    <Grid RowDefinitions="* , 20 , 100">
+        <Image Source="my_app_logo.png" WidthRequest="250" HeightRequest="250"></Image>
+        <ProgressBar x:Name="progressBar" HorizontalOptions="Center" WidthRequest="200" Grid.Row="1"></ProgressBar>
+        <Image HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="100" Grid.Row="2" Source="companilogo.png"></Image>
+    </Grid>
+    
 </ContentPage>

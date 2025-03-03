@@ -43,14 +43,15 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\applogo.png" Color="#ffffff" ForegroundScale="0.60"/>
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\applogo.png" Color="#ffffff" ForegroundScale="0.60" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splashlogo.png" Color="#000000"  BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\splashlogo.png" Color="#000000" BaseSize="128,128" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.png" Resize="True" BaseSize="300,185" />
+		<MauiImage Include="Resources\Images\Logos\*" />
+		<MauiImage Include="Resources\Images\Icons\*" />
 
 		<!-- Custom Fonts -->
 		<MauiFont Include="Resources\Fonts\*" />
@@ -92,6 +93,7 @@
 	  <Folder Include="Data_Db_Contexts\" />
 	  <Folder Include="Pages\MobilePages\" />
 	  <Folder Include="Pages\DesktopPages\" />
+	  <Folder Include="Resources\Images\Icons\" />
 	  <Folder Include="Services\Real-Time Connection Service\" />
 	  <Folder Include="wwwroot\css\" />
 	  <Folder Include="wwwroot\js\" />

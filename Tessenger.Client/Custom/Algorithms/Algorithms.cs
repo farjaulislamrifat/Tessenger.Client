@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CommunityToolkit.Maui.Core;
+using DevExpress.Maui.Core.Internal;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace Tessenger.Client.Custom.Algorithms
 {
-    public  class Algorithms : IAlgorithms
+    public class Algorithms : IAlgorithms
     {
 
         /// <summary>
         ///   Returns a dictionary of countries and their languages
         /// </summary>
+        /// <returns>'Dictionary<string, (string CountryName, string Language)>'</returns>
         public Dictionary<string, (string CountryName, string Language)> GetCountryes => new Dictionary<string, (string CountryName, string Language)>()
         {
             { "af-ZA", ("South Africa", "Afrikaans") },
@@ -163,5 +166,76 @@ namespace Tessenger.Client.Custom.Algorithms
             { "zh-TW", ("Taiwan", "Chinese (Traditional)") },
             { "zu-ZA", ("South Africa", "Zulu") }
         };
+
+        /// <summary>
+        /// Check if the color is light or dark
+        /// </summary>
+        /// <param name="color"> </param>
+        /// <returns>bool</returns>
+        public bool IsColorLight(Color color)
+        {
+            var Bright = color.GetBrightness();
+            if (Bright > 0.5)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
+        /// <summary>
+        /// Status bar dynamic Color Change
+        /// </summary>
+        /// <param name="contentPage"></param>
+        /// <param name="Light_color"></param>
+        /// <param name="Dark_color"></param>
+        /// <param name="isDark"></param>
+        /// <exception cref="NotImplementedException"></exception>
+        public void StatusBarCustomizetion(ContentPage contentPage, Color Light_color, Color Dark_color, bool isDark)
+        {
+            Application.Current.RequestedThemeChanged += (s, e) =>
+            {
+                init(e.RequestedTheme);
+            };
+
+          
+            init(Application.Current.RequestedTheme);
+
+
+            void init(AppTheme appTheme)
+            {
+
+                if (AppTheme.Dark == appTheme)
+                {
+
+                    if (IsColorLight(Dark_color))
+                    {
+                        contentPage.Behaviors.Add(new CommunityToolkit.Maui.Behaviors.StatusBarBehavior { StatusBarColor = Dark_color, StatusBarStyle = StatusBarStyle.LightContent });
+                    }
+                    else
+                    {
+                        contentPage.Behaviors.Add(new CommunityToolkit.Maui.Behaviors.StatusBarBehavior { StatusBarColor = Dark_color, StatusBarStyle = StatusBarStyle.DarkContent });
+
+                    }
+                }
+                else 
+                {
+                    if (IsColorLight(Light_color))
+                    {
+                        contentPage.Behaviors.Add(new CommunityToolkit.Maui.Behaviors.StatusBarBehavior { StatusBarColor = Light_color, StatusBarStyle = StatusBarStyle.LightContent });
+                    }
+                    else
+                    {
+                        contentPage.Behaviors.Add(new CommunityToolkit.Maui.Behaviors.StatusBarBehavior { StatusBarColor = Light_color, StatusBarStyle = StatusBarStyle.DarkContent });
+                    }
+                }
+              
+
+            }
+        }
+
+
+
+
     }
 }
